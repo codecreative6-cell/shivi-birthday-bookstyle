@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Story of Shivi 🌻 — A Birthday Storybook</title>
+    <meta name="description"
+        content="An interactive birthday storybook celebrating Shivi Singh — the sunflower soul. Turn the pages and relive the beautiful moments.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Dancing+Script:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--  BACKGROUND CANVAS  -->
+    <div class="bg-canvas" id="bgCanvas"></div>
+
+    <!--  COVER OVERLAY  -->
+    <div class="cover-overlay" id="coverOverlay">
+        <div class="cover-book">
+            <!-- Sparkles — more of them -->
+            <div class="cover-sparkle" style="top:10%;left:15%;animation-delay:0s;"></div>
+            <div class="cover-sparkle" style="top:20%;right:12%;animation-delay:0.5s;"></div>
+            <div class="cover-sparkle" style="bottom:25%;left:20%;animation-delay:1s;"></div>
+            <div class="cover-sparkle" style="bottom:15%;right:18%;animation-delay:0.3s;"></div>
+            <div class="cover-sparkle" style="top:40%;left:8%;animation-delay:0.7s;"></div>
+            <div class="cover-sparkle" style="top:55%;right:8%;animation-delay:1.2s;"></div>
+            <div class="cover-sparkle" style="top:5%;left:45%;animation-delay:0.9s;"></div>
+            <div class="cover-sparkle" style="bottom:8%;left:50%;animation-delay:0.4s;"></div>
+
+            <!-- Rotating sun rays behind sunflower -->
+            <div class="cover-ray-wrap">
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:0s;"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-1s;transform:rotate(30deg);"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-2s;transform:rotate(60deg);"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-3s;transform:rotate(90deg);"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-4s;transform:rotate(120deg);"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-5s;transform:rotate(150deg);"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-6s;transform:rotate(180deg);"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-7s;transform:rotate(210deg);"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-8s;transform:rotate(240deg);"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-9s;transform:rotate(270deg);"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-10s;transform:rotate(300deg);"></div>
+                <div class="cover-ray" style="animation-duration:12s;animation-delay:-11s;transform:rotate(330deg);"></div>
+            </div>
+
+            <!-- Belly band -->
+            <div class="cover-belly-band"></div>
+
+            <!-- Gold band (right side / spine) -->
+            <div class="cover-gold-band"></div>
+
+            <!-- Wax Seal -->
+            <div class="wax-seal">🌻</div>
+
+            <!-- SVG Sunflower -->
+            <svg class="cover-sunflower" viewBox="0 0 200 200">
+                <g transform="translate(100,100)">
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#f5c518" transform="rotate(0)">
+                        <animateTransform attributeName="transform" type="rotate" values="0;5;0;-5;0" dur="3s"
+                            repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#ffe066" transform="rotate(30)">
+                        <animateTransform attributeName="transform" type="rotate" values="30;35;30;25;30" dur="3.2s"
+                            repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#f5c518" transform="rotate(60)">
+                        <animateTransform attributeName="transform" type="rotate" values="60;65;60;55;60" dur="2.8s"
+                            repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#ffe066" transform="rotate(90)">
+                        <animateTransform attributeName="transform" type="rotate" values="90;95;90;85;90" dur="3.5s"
+                            repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#f5c518" transform="rotate(120)">
+                        <animateTransform attributeName="transform" type="rotate" values="120;125;120;115;120" dur="3s"
+                            repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#ffe066" transform="rotate(150)">
+                        <animateTransform attributeName="transform" type="rotate" values="150;155;150;145;150"
+                            dur="2.9s" repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#f5c518" transform="rotate(180)">
+                        <animateTransform attributeName="transform" type="rotate" values="180;185;180;175;180"
+                            dur="3.3s" repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#ffe066" transform="rotate(210)">
+                        <animateTransform attributeName="transform" type="rotate" values="210;215;210;205;210"
+                            dur="3.1s" repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#f5c518" transform="rotate(240)">
+                        <animateTransform attributeName="transform" type="rotate" values="240;245;240;235;240"
+                            dur="2.7s" repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#ffe066" transform="rotate(270)">
+                        <animateTransform attributeName="transform" type="rotate" values="270;275;270;265;270"
+                            dur="3.4s" repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#f5c518" transform="rotate(300)">
+                        <animateTransform attributeName="transform" type="rotate" values="300;305;300;295;300" dur="3s"
+                            repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <ellipse rx="16" ry="38" cx="0" cy="-42" fill="#ffe066" transform="rotate(330)">
+                        <animateTransform attributeName="transform" type="rotate" values="330;335;330;325;330"
+                            dur="2.6s" repeatCount="indefinite" additive="sum" />
+                    </ellipse>
+                    <circle r="26" fill="#5c3a1e" />
+                    <circle r="20" fill="#8B5E3C" />
+                    <circle cx="-6" cy="-4" r="4" fill="#6B4423" opacity="0.5" />
+                    <circle cx="5" cy="3" r="3.5" fill="#6B4423" opacity="0.4" />
+                    <circle cx="-2" cy="7" r="3" fill="#6B4423" opacity="0.35" />
+                </g>
+            </svg>
+
+            <div class="cover-title-small">A Birthday Storybook</div>
+            <h1 class="cover-title">The Story of Shivi</h1>
+            <p class="cover-subtitle">Bloom with Grace, Shine like a Sunflower</p>
+            <div class="cover-line"></div>
+            <div class="cover-tap">✦ Tap to Open ✦</div>
+        </div>
+    </div>
+
+    <!--  STORYBOOK  -->
+    <div class="storybook-container" id="storyContainer">
+        <!-- Floating butterflies (appended by JS) -->
+        <div id="butterflyLayer"></div>
+
+        <div class="book" id="book">
+            <!-- Pages will be populated by JS -->
+
+            <!-- Ribbon bookmarks -->
+            <div class="book-ribbon"></div>
+            <div class="book-ribbon-2"></div>
+
+            <!-- Spine shadow line -->
+            <div class="spine-ornament"></div>
+        </div>
+    </div>
+
+    <!--  NAVIGATION  -->
+    <div class="nav-controls" id="navControls" style="display:none;">
+        <button class="nav-btn" id="btnPrev" aria-label="Previous page">
+            <svg viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6" />
+            </svg>
+        </button>
+        <div class="nav-dots" id="navDots"></div>
+        <div class="nav-indicator" id="navIndicator">1 / 15</div>
+        <button class="nav-btn" id="btnNext" aria-label="Next page">
+            <svg viewBox="0 0 24 24">
+                <polyline points="9 6 15 12 9 18" />
+            </svg>
+        </button>
+    </div>
+
+    <!--  KEYBOARD HINT  -->
+    <div class="keyboard-hint" id="keyHint" style="display:none;">
+        <span class="key">←</span><span class="key">→</span> navigate
+    </div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
+
